@@ -23,7 +23,7 @@ scanf("%d", &x);
 if (x > 0) {
 x++;
 } else {
- x = x - 2;
+x = x - 2;
 }
 printf("%d", x);
 }
@@ -66,18 +66,17 @@ printf("%d", count);
 ==================
 #include <stdio.h>
 int main() {
-    int x, y;
+int x, y;
     if (scanf("%d%d", &x, &y) != 2) {
-        return 1;
-    }
+return 1;
+}
     if (x > y) {
-        printf("%d\n", x);
-    } else if (y > x) {
-        printf("%d\n", y);
-    } else {
-        printf("Числа равны\n");
-    }
-    return 0;
+printf("%d\n", x);
+} else if (y > x) {
+printf("%d\n", y);
+} else {
+printf("Числа равны\n");
+}
 }
 ==================
 /*6.Даны три числа. Найти наименьшее из них.*/
@@ -85,17 +84,16 @@ int main() {
 #include <stdio.h>
 int main () {
 int a, b, c;
-	int min;
+int min;
 scanf("%d%d%d", &a, &b, &c);
 if (a > b || c > b) {
-	min = b;
+min = b;
+} else if (a > c || b > c) {
+min = c;
+} else {
+min = a;
 }
-	if (a > c || b > c) {
-		min = c;
-	}else{
-	min = a;
-	}
-	printf("%d",min);
+printf("%d",min);
 }
 ===================
 /*7.Дан номер месяца — целое число в диапазоне 1–12 (1 — январь, 2 — февраль и т. д.). Вывести название соответствующего времени года («зима»,
@@ -104,23 +102,22 @@ if (a > b || c > b) {
 #include <stdio.h>
 #include <locale.h>
 int main() {
-	setlocale(LC_ALL, "");
-	int month;
-	scanf("%d", &month);
+setlocale(LC_ALL, "");
+int month;
+scanf("%d", &month);
 	if (month == 12 || month == 1 || month == 2) {
-		printf("Месяц %d — зима", month);
-	} 
-	else if (month >= 3 && month <= 5) {
-		printf("Месяц %d — весна", month);
-	} 
-	else if (month >= 6 && month <= 8) {
-		printf("Месяц %d — лето", month);
-	} 
-	else { 
-		printf("Месяц %d — осень", month);
-	}
-	printf("\n");
-	return 0;
+printf("Месяц %d — зима", month);
+} 
+else if (month >= 3 && month <= 5) {
+printf("Месяц %d — весна", month);
+} 
+else if (month >= 6 && month <= 8) {
+printf("Месяц %d — лето", month);
+} 
+else { 
+printf("Месяц %d — осень", month);
+}
+printf("\n");
 }
 ==================
 /*
@@ -138,10 +135,42 @@ int month;
 scanf("%d", &month);
 	if (month == 1 || month == 3 || month == 5 || month == 7 || month ==  8 || month == 10 || month == 12) {
 printf("Месяц %d - 31 день", month);
-	}  else if (month == 2) {
+}  else if (month == 2) {
 printf("Месяц %d - 28 день", month);
-	} else {
+} else {
 printf("Месяц %d - 30 день", month);
-	}
+}
 printf("\n");
+}
 ===================
+/*№4*/
+#include <stdio.h>
+int main () {
+int day;
+scanf("%d", &day);
+	if (day <= 5) {
+printf("%d - working day", day);
+}  else if (day > 5 && day < 8) {
+printf("%d - weekend",day);
+} else {
+printf("Error");
+}
+}
+==================
+/*№5*/
+#include <stdio.h>
+int main () {
+int h,m;
+scanf("%d:%d", &h, &m);
+       if (h >= 6 && h < 12) {
+printf("%02d:%02d - morning",h, m);
+} else if (h >= 12 && h < 18) {
+printf("%02d:%02d - day",h, m);
+} else if (h >= 18 && h < 24) {	  
+printf("%02d:%02d - evening",h, m);
+} else if (h >= 0 && h < 6) {	  
+printf("%02d:%02d - night",h, m);
+} else {
+printf("Error");
+}
+}
