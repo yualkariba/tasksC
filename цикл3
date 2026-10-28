@@ -1,0 +1,14 @@
+/*4.Даны три целых числа. Найти количество положительных чисел в исходном наборе.*/
+#include <stdio.h>
+int main() {
+	int x, y, z;
+	int count=0;
+	scanf("%d%d%d", &x, &y, &z);
+	if (x > 0) {
+		count++;
+	} if (y > 0) {
+		count++;
+	} if (z > 0) {
+		count++;
+	}
+	printf("%d", count);
